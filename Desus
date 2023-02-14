@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C+A Counter</title>
+	<style>
+		body {
+			background-color: #F2EDEA;
+			color: #5E5D5C;
+			font-family: 'Helvetica Neue', sans-serif;
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 1.4;
+			letter-spacing: 2px;
+			text-align: center;
+		}
+
+		.container {
+			margin: 50px auto;
+			width: 80%;
+			max-width: 600px;
+			background-color: #E4D5B7;
+			border-radius: 20px;
+			box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+			padding: 20px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		h1 {
+			font-size: 50px;
+			margin-top: 20px;
+			margin-bottom: 0;
+			color: #C46E51;
+			text-shadow: 2px 2px #DBCEB6;
+			text-transform: uppercase;
+			letter-spacing: 5px;
+			position: relative;
+			z-index: 1;
+		}
+
+		p {
+			font-size: 35px;
+			margin: 0;
+			padding: 30px;
+			background-color: #C46E51;
+			color: #F2EDEA;
+			border-radius: 10px;
+			position: relative;
+			z-index: 1;
+			line-height: 1.2;
+		}
+
+		.heart {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 150px;
+			color: #F2EDEA;
+			text-shadow: 2px 2px #DBCEB6;
+			z-index: 0;
+		}
+
+		.signature {
+			font-size: 30px;
+			margin-top: 30px;
+			color: #C46E51;
+			text-shadow: 2px 2px #DBCEB6;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>C+A Counter</h1>
+		<p id="countdown"></p>
+		<div class="heart">&hearts;</div>
+		<div class="signature">Ich liebe Dich</div>
+	</div>
+
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("Jan 11, 2022 00:00:00").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+
+			// Get today's date and time
+			var now = new Date().getTime();
+
+			// Find the distance between now and the count down date
+			var distance = now - countDownDate;
+
+			// Time calculations for days, weeks, and months
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var weeks = Math.floor(days / 7);
+			var months = Math.floor(days / 30);
+
+			// Display the result in the element with id="countdown"
+			document.getElementById("countdown").innerHTML = days + " Tage<br>" + weeks + " Wochen<br>"
